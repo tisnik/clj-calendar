@@ -24,6 +24,11 @@
     (let [date-format (new java.text.SimpleDateFormat desired-format)]
         (.format date-format (.getTime calendar))))
 
+(defn format-date
+    "Format given date using the following format: 'yyyy-MM-dd'"
+    [calendar]
+    (format-date-using-desired-format calendar "yyyy-MM-dd"))
+
 (defn format-date-time
     "Format given date using the following format: 'yyyy-MM-dd HH:mm:ss'"
     [calendar]
