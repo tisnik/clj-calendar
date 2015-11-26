@@ -42,6 +42,26 @@
     [calendar]
     (.get calendar java.util.Calendar/DAY_OF_WEEK))
 
+(defn calculate-first-day-of-week
+    "Calculate first day of week for given date."
+    [calendar]
+    (- (.getFirstDayOfWeek calendar) (get-day-of-week calendar)))
+
+(defn get-first-day-of-week
+    "Returns first day of given week."
+    [calendar]
+    (let [first-day-of-week (.clone calendar)]
+        (.add first-day-of-week java.util.Calendar/DAY_OF_WEEK (calculate-first-day-of-week first-day-of-week ))
+        first-day-of-week))
+
+(defn get-last-day-of-week
+    "Return last day of given week."
+    [calendar]
+    (let [first-day-of-week (get-first-day-of-week calendar)
+          last-day-of-week  (.clone first-day-of-week)]
+        (.add last-day-of-week java.util.Calendar/DAY_OF_YEAR, 6)
+        last-day-of-week))
+
 (defn format-date-using-desired-format
     "Format given date using desired format, for example 'yyyy-MM-dd' etc."
     [calendar desired-format]
@@ -57,4 +77,22 @@
     "Format given date using the following format: 'yyyy-MM-dd HH:mm:ss'"
     [calendar]
     (format-date-using-desired-format calendar "yyyy-MM-dd HH:mm:ss"))
+
+(defn get-first-day-of-week-formatted
+    "Get date of first day of given week formatted as yyyy-mm-dd."
+    [calendar]
+    (format-date (get-first-day-of-week calendar)))
+
+(defn get-last-day-of-week-formatted
+    "Get date of last day of given week formatted as yyyy-mm-dd."
+    [calendar]
+    (format-date (get-last-day-of-week calendar)))
+
+(defn format-from-to-date-for-week
+    "Return a string containing formatted first and last days of week."
+    [year week]
+    (let [cal (get-calendar-for-week year week)]
+        (str (get-first-day-of-week-formatted cal)
+             " - "
+             (get-last-day-of-week-formatted cal))))
 
