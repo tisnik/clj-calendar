@@ -11,9 +11,32 @@
 ;
 
 (ns clj-calendar.calendar-test
-  (:require [clojure.test :refer :all]
-            [clj-calendar.calendar :refer :all]))
+    (:require [clojure.test :refer :all]
+              [clj-calendar.calendar :refer :all]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+
+;
+; Common functions used by tests.
+;
+
+(defn callable?
+    "Test if given function-name is bound to the real function."
+    [function-name]
+    (clojure.test/function? function-name))
+
+
+
+;
+; Actual tests.
+;
+
+(deftest test-get-calendar-existence
+    "Check that the clj-calendar.calendar/get-calendar function definition exists."
+    (testing "if the clj-calendar.calendar/get-calendar function definition exists."
+        (is (callable? 'clj-calendar.calendar/get-calendar))))
+
+(deftest test-get-calendar-for-week-existence
+    "Check that the clj-calendar.calendar/get-calendar-for-week function definition exists."
+    (testing "if the clj-calendar.calendar/get-calendar-for-week function definition exists."
+        (is (callable? 'clj-calendar.calendar/get-calendar-for-week))))
+
