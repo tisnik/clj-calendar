@@ -19,7 +19,7 @@
     (java.util.Calendar/getInstance))
 
 (defn get-calendar-for-week
-    "Gets a calendar for given year and week."
+    "Gets a calendar (instance of java.util.Calendar) for given year and week."
     [year week]
     (let [cal (get-calendar)]
         (.clear cal)
@@ -69,12 +69,12 @@
         (.format date-format (.getTime calendar))))
 
 (defn format-date
-    "Format given date using the following format: 'yyyy-MM-dd'"
+    "Format given date using the following date/time format: 'yyyy-MM-dd'"
     [calendar]
     (format-date-using-desired-format calendar "yyyy-MM-dd"))
 
 (defn format-date-time
-    "Format given date using the following format: 'yyyy-MM-dd HH:mm:ss'"
+    "Format given date using the following date/time format: 'yyyy-MM-dd HH:mm:ss'"
     [calendar]
     (format-date-using-desired-format calendar "yyyy-MM-dd HH:mm:ss"))
 
