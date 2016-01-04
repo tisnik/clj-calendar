@@ -70,3 +70,8 @@
     (testing "if the clj-calendar.calendar/format-date-using-desired-format function definition exists."
         (is (callable? 'clj-calendar.calendar/format-date-using-desired-format))))
 
+(deftest test-format-from-to-date-for-week-existence
+    "Check that the clj-calendar.calendar/format-from-to-date-for-week function definition exists."
+    (testing "if the clj-calendar.calendar/format-from-to-date-for-week function definition exists."
+        (is (callable? 'clj-calendar.calendar/format-from-to-date-for-week))))
+
