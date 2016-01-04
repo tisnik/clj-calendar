@@ -55,3 +55,18 @@
     (testing "if the clj-calendar.calendar/get-day-of-week function definition exists."
         (is (callable? 'clj-calendar.calendar/get-day-of-week))))
 
+(deftest test-format-date-existence
+    "Check that the clj-calendar.calendar/format-date function definition exists."
+    (testing "if the clj-calendar.calendar/format-date function definition exists."
+        (is (callable? 'clj-calendar.calendar/format-date))))
+
+(deftest test-format-date-time-existence
+    "Check that the clj-calendar.calendar/format-date-time function definition exists."
+    (testing "if the clj-calendar.calendar/format-date-time function definition exists."
+        (is (callable? 'clj-calendar.calendar/format-date-time))))
+
+(deftest test-format-date-using-desired-format-existence
+    "Check that the clj-calendar.calendar/format-date-using-desired-format function definition exists."
+    (testing "if the clj-calendar.calendar/format-date-using-desired-format function definition exists."
+        (is (callable? 'clj-calendar.calendar/format-date-using-desired-format))))
+
