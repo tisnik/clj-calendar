@@ -40,3 +40,18 @@
     (testing "if the clj-calendar.calendar/get-calendar-for-week function definition exists."
         (is (callable? 'clj-calendar.calendar/get-calendar-for-week))))
 
+(deftest test-get-year-existence
+    "Check that the clj-calendar.calendar/get-year function definition exists."
+    (testing "if the clj-calendar.calendar/get-year function definition exists."
+        (is (callable? 'clj-calendar.calendar/get-year))))
+
+(deftest test-get-week-existence
+    "Check that the clj-calendar.calendar/get-week function definition exists."
+    (testing "if the clj-calendar.calendar/get-week function definition exists."
+        (is (callable? 'clj-calendar.calendar/get-week))))
+
+(deftest test-get-day-of-week-existence
+    "Check that the clj-calendar.calendar/get-day-of-week function definition exists."
+    (testing "if the clj-calendar.calendar/get-day-of-week function definition exists."
+        (is (callable? 'clj-calendar.calendar/get-day-of-week))))
+
