@@ -75,3 +75,28 @@
     (testing "if the clj-calendar.calendar/format-from-to-date-for-week function definition exists."
         (is (callable? 'clj-calendar.calendar/format-from-to-date-for-week))))
 
+(deftest test-calculate-first-day-of-week-existence
+    "Check that the clj-calendar.calendar/calculate-first-day-of-week function definition exists."
+    (testing "if the clj-calendar.calendar/calculate-first-day-of-week function definition exists."
+        (is (callable? 'clj-calendar.calendar/calculate-first-day-of-week))))
+
+(deftest test-get-first-day-of-week-existence
+    "Check that the clj-calendar.calendar/get-first-day-of-week function definition exists."
+    (testing "if the clj-calendar.calendar/get-first-day-of-week function definition exists."
+        (is (callable? 'clj-calendar.calendar/get-first-day-of-week))))
+
+(deftest test-get-last-day-of-week-existence
+    "Check that the clj-calendar.calendar/get-last-day-of-week function definition exists."
+    (testing "if the clj-calendar.calendar/get-last-day-of-week function definition exists."
+        (is (callable? 'clj-calendar.calendar/get-last-day-of-week))))
+
+(deftest test-get-first-day-of-week-formatted-existence
+    "Check that the clj-calendar.calendar/get-first-day-of-week-formatted function definition exists."
+    (testing "if the clj-calendar.calendar/get-first-day-of-week-formatted function definition exists."
+        (is (callable? 'clj-calendar.calendar/get-first-day-of-week-formatted))))
+
+(deftest test-get-last-day-of-week-formatted-existence
+    "Check that the clj-calendar.calendar/get-last-day-of-week-formatted function definition exists."
+    (testing "if the clj-calendar.calendar/get-last-day-of-week-formatted function definition exists."
+        (is (callable? 'clj-calendar.calendar/get-last-day-of-week-formatted))))
+
