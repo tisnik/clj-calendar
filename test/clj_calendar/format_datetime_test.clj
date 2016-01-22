@@ -12,7 +12,7 @@
 
 (ns clj-calendar.format-datetime-test
     (:require [clojure.test :refer :all]
-              [clj-calendar.calendar :refer :all]))
+              [clj-calendar.format-datetime :refer :all]))
 
 
 ;
@@ -26,4 +26,32 @@
 
 
 
+;
+; Actual tests.
+;
+
+(deftest test-format-time-existence
+    "Check that the clj-calendar.format-datetime/format-time function definition exists."
+    (testing "if the clj-calendar.format-datetime/format-time function definition exists."
+        (is (callable? 'clj-calendar.format-datetime/format-time))))
+
+(deftest test-format-time--existence
+    "Check that the clj-calendar.format-datetime/format-time- function definition exists."
+    (testing "if the clj-calendar.format-datetime/format-time- function definition exists."
+        (is (callable? 'clj-calendar.format-datetime/format-time-))))
+
+(deftest test-format-month-existence
+    "Check that the clj-calendar.format-datetime/format-month function definition exists."
+    (testing "if the clj-calendar.format-datetime/format-month function definition exists."
+        (is (callable? 'clj-calendar.format-datetime/format-month))))
+
+(deftest test-format-day-existence
+    "Check that the clj-calendar.format-datetime/format-day function definition exists."
+    (testing "if the clj-calendar.format-datetime/format-day function definition exists."
+        (is (callable? 'clj-calendar.format-datetime/format-day))))
+
+(deftest test-format-hours-existence
+    "Check that the clj-calendar.format-datetime/format-hours function definition exists."
+    (testing "if the clj-calendar.format-datetime/format-hours function definition exists."
+        (is (callable? 'clj-calendar.format-datetime/format-hours))))
 
