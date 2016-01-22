@@ -55,3 +55,13 @@
     (testing "if the clj-calendar.format-datetime/format-hours function definition exists."
         (is (callable? 'clj-calendar.format-datetime/format-hours))))
 
+(deftest test-format-minutes-existence
+    "Check that the clj-calendar.format-datetime/format-minutes function definition exists."
+    (testing "if the clj-calendar.format-datetime/format-minutes function definition exists."
+        (is (callable? 'clj-calendar.format-datetime/format-minutes))))
+
+(deftest test-format-seconds-existence
+    "Check that the clj-calendar.format-datetime/format-seconds function definition exists."
+    (testing "if the clj-calendar.format-datetime/format-seconds function definition exists."
+        (is (callable? 'clj-calendar.format-datetime/format-seconds))))
+
