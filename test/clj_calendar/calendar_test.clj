@@ -100,3 +100,45 @@
     (testing "if the clj-calendar.calendar/get-last-day-of-week-formatted function definition exists."
         (is (callable? 'clj-calendar.calendar/get-last-day-of-week-formatted))))
 
+;
+; Tests for function behaviours
+;
+
+(deftest test-get-calendar
+    "Check the function clj-calendar.calendar.calendar/get-calendar."
+    (testing "the function clj-calendar.calendar.calendar/get-calendar."
+        (is (not (nil? (get-calendar))))
+        (is (or
+            (=  (class (get-calendar)) java.util.Calendar)
+            (=  (class (get-calendar)) java.util.GregorianCalendar)))
+        (is (or
+            (=  (type  (get-calendar)) java.util.Calendar)
+            (=  (type  (get-calendar)) java.util.GregorianCalendar)))
+        (is (>  (.get (get-calendar) (java.util.Calendar/YEAR)) 2000))
+        (is (>= (.get (get-calendar) (java.util.Calendar/MONTH)) 0))
+        (is (<  (.get (get-calendar) (java.util.Calendar/MONTH)) 12))
+        (is (>= (.get (get-calendar) (java.util.Calendar/DAY_OF_MONTH)) 0))
+        (is (<= (.get (get-calendar) (java.util.Calendar/DAY_OF_MONTH)) 31)) ; let's be on the safe side
+        (is (>= (.get (get-calendar) (java.util.Calendar/DAY_OF_YEAR)) 0))
+        (is (<= (.get (get-calendar) (java.util.Calendar/DAY_OF_YEAR)) 366)) ; let's be on the safe side
+        (is (>= (.get (get-calendar) (java.util.Calendar/WEEK_OF_YEAR)) 0))
+        (is (<= (.get (get-calendar) (java.util.Calendar/WEEK_OF_YEAR)) 54)) ; let's be on the safe side
+))
+
+(deftest test-get-calendar-2
+    "Check the function clj-calendar.calendar.calendar/get-calendar."
+    (testing "the function clj-calendar.calendar.calendar/get-calendar."
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 01 01 10 20 30)
+            (is (not (nil? calendar)))
+            (is (or
+                (=  (class calendar) java.util.Calendar)
+                (=  (class calendar) java.util.GregorianCalendar)))
+            (is (or
+                (=  (type  calendar) java.util.Calendar)
+                (=  (type  calendar) java.util.GregorianCalendar)))
+            (is (=  (.get calendar (java.util.Calendar/YEAR)) 2000))
+            (is (=  (.get calendar (java.util.Calendar/MONTH)) 1))
+            (is (=  (.get calendar (java.util.Calendar/DAY_OF_MONTH)) 1)))
+))
+
