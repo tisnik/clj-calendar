@@ -144,7 +144,7 @@
 
 (deftest test-get-calendar-3
     "Check the function clj-calendar.calendar.calendar/get-calendar."
-    (testing "the function clj-calendar.calendar.calendar/get-calendar." 
+    (testing "the function clj-calendar.calendar.calendar/get-calendar."
         (is (not (nil? (get-calendar))))
         (is (>= (.get (get-calendar) (java.util.Calendar/HOUR)) 0))
         (is (<= (.get (get-calendar) (java.util.Calendar/HOUR)) 11))
@@ -157,4 +157,37 @@
         (is (>= (.get (get-calendar) (java.util.Calendar/MILLISECOND)) 0))
         (is (<= (.get (get-calendar) (java.util.Calendar/MILLISECOND)) 999))
 ))
+
+(deftest test-format-date-using-desired-format
+    "Check the function clj-calendar.calendar.calendar/format-date-using-desired-format"
+    (testing "the function clj-calendar.calendar.calendar/format-date-using-desired-format."
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 01 01 10 20 30)
+            (is (= "2000" (format-date-using-desired-format calendar "yyyy")))
+            (is (= "02"   (format-date-using-desired-format calendar "MM")))
+            (is (= "01"   (format-date-using-desired-format calendar "dd")))
+            (is (= "10"   (format-date-using-desired-format calendar "hh")))
+            (is (= "20"   (format-date-using-desired-format calendar "mm")))
+            (is (= "30"   (format-date-using-desired-format calendar "ss"))))))
+
+(deftest test-format-date-using-desired-format-2
+    "Check the function clj-calendar.calendar.calendar/format-date-using-desired-format"
+    (testing "the function clj-calendar.calendar.calendar/format-date-using-desired-format."
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 01 01 10 20 30)
+            (is (= "2000-02"    (format-date-using-desired-format calendar "yyyy-MM")))
+            (is (= "2000-02-01" (format-date-using-desired-format calendar "yyyy-MM-dd")))
+            (is (= "02-01"      (format-date-using-desired-format calendar "MM-dd")))
+            (is (= "2000-01"    (format-date-using-desired-format calendar "yyyy-dd"))))))
+
+(deftest test-format-date-using-desired-format-3
+    "Check the function clj-calendar.calendar.calendar/format-date-using-desired-format"
+    (testing "the function clj-calendar.calendar.calendar/format-date-using-desired-format."
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 01 01 10 20 30)
+            (is (= "10:20"      (format-date-using-desired-format calendar "hh:mm")))
+            (is (= "10:20:30"   (format-date-using-desired-format calendar "hh:mm:ss")))
+            (is (= "2000-02-01 10"  (format-date-using-desired-format calendar "yyyy-MM-dd hh")))
+            (is (= "2000-02-01 10:20"  (format-date-using-desired-format calendar "yyyy-MM-dd hh:mm")))
+            (is (= "2000-02-01 10:20:30"  (format-date-using-desired-format calendar "yyyy-MM-dd hh:mm:ss"))))))
 
