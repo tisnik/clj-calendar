@@ -191,3 +191,38 @@
             (is (= "2000-02-01 10:20"  (format-date-using-desired-format calendar "yyyy-MM-dd hh:mm")))
             (is (= "2000-02-01 10:20:30"  (format-date-using-desired-format calendar "yyyy-MM-dd hh:mm:ss"))))))
 
+(deftest test-format-date-time-1
+    "Check the function clj-calendar.calendar.calendar/format-date-time"
+    (testing "the function clj-calendar.calendar.calendar/format-date-time"
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 01 01 10 20 30)
+            (is (= "2000-02-01 10:20:30" (format-date-time calendar))))))
+
+(deftest test-format-date-time-2
+    "Check the function clj-calendar.calendar.calendar/format-date-time"
+    (testing "the function clj-calendar.calendar.calendar/format-date-time"
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 00 01 10 20 30)
+            (is (= "2000-01-01 10:20:30" (format-date-time calendar))))))
+
+(deftest test-format-date-time-3
+    "Check the function clj-calendar.calendar.calendar/format-date-time"
+    (testing "the function clj-calendar.calendar.calendar/format-date-time"
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 00 31 10 20 30)
+            (is (= "2000-01-31 10:20:30" (format-date-time calendar))))))
+
+(deftest test-format-date-time-4
+    "Check the function clj-calendar.calendar.calendar/format-date-time"
+    (testing "the function clj-calendar.calendar.calendar/format-date-time"
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 11 31 10 20 30)
+            (is (= "2000-12-31 10:20:30" (format-date-time calendar))))))
+
+(deftest test-format-date-time-5
+    "Check the function clj-calendar.calendar.calendar/format-date-time"
+    (testing "the function clj-calendar.calendar.calendar/format-date-time"
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 00 01 00 00 00)
+            (is (= "2000-01-01 00:00:00" (format-date-time calendar))))))
+
