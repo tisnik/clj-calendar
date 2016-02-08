@@ -24,10 +24,8 @@
     [function-name]
     (clojure.test/function? function-name))
 
-
-
 ;
-; Actual tests.
+; Tests for various defs and functions existence
 ;
 
 (deftest test-format-time-existence
@@ -64,4 +62,23 @@
     "Check that the clj-calendar.format-datetime/format-seconds function definition exists."
     (testing "if the clj-calendar.format-datetime/format-seconds function definition exists."
         (is (callable? 'clj-calendar.format-datetime/format-seconds))))
+
+;
+; Actual tests.
+;
+
+(deftest test-format-time-1
+    "Check the function clj-calandar.format-datetime/format-time-."
+    (testing "the function clj-calandar.format-datetime/format-time-."
+        (are [x y] (= x y)  
+              "one minute ago"                (format-time- 1 0 "minute" "second")
+              "one minute and one second ago" (format-time- 1 1 "minute" "second")
+              "one minute and 2 seconds ago"  (format-time- 1 2 "minute" "second")
+              "one day ago"                   (format-time- 1 0 "day" "hour")
+              "one day and one hour ago"      (format-time- 1 1 "day" "hour")
+              "one day and 2 hours ago"       (format-time- 1 2 "day" "hour")
+              "one month ago"                 (format-time- 1 0 "month" "year")
+              "one month and one year ago"    (format-time- 1 1 "month" "year")
+              "one month and 2 years ago"     (format-time- 1 2 "month" "year"))))
+
 
