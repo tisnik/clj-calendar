@@ -95,4 +95,12 @@
               "2 months and one year ago"    (format-time- 2 1 "month" "year")
               "2 months and 2 years ago"     (format-time- 2 2 "month" "year"))))
 
+(deftest test-format-time
+    "Check the function clj-calandar.format-datetime/format-time."
+    (testing "the function clj-calandar.format-datetime/format-time."
+        (are [x y] (= x y)  
+              "1 month ago"  (format-time 1 "month")
+              "2 months ago" (format-time 2 "months")
+              "1 year ago"   (format-time 1 "year")
+              "2 years ago"  (format-time 2 "years"))))
 
