@@ -170,3 +170,25 @@
               "2 hours and 2 minutes ago"    (format-hours 2 2)
               "2 hours and 100 minutes ago"  (format-hours 2 100))))
 
+(deftest test-format-minutes-1
+    "Check the function clj-calendar.format-datetime/format-minutes."
+    (testing "the function clj-calendar.format-datetime/format-minutes."
+        (are [x y] (= x y)  
+              "one minute ago"              (format-minutes 1 0))))
+
+(deftest test-format-minutes-2
+    "Check the function clj-calendar.format-datetime/format-minutes."
+    (testing "the function clj-calendar.format-datetime/format-minutes."
+        (are [x y] (= x y)  
+              "one minute and one second ago"  (format-minutes 1 1)
+              "one minute and 2 seconds ago"   (format-minutes 1 2)
+              "one minute and 100 seconds ago" (format-minutes 1 100))))
+
+(deftest test-format-minutes-3
+    "Check the function clj-calendar.format-datetime/format-minutes."
+    (testing "the function clj-calendar.format-datetime/format-minutes."
+        (are [x y] (= x y)  
+              "2 minutes and one second ago"   (format-minutes 2 1)
+              "2 minutes and 2 seconds ago"    (format-minutes 2 2)
+              "2 minutes and 100 seconds ago"  (format-minutes 2 100))))
+
