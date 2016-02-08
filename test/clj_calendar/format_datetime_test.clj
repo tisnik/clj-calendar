@@ -68,8 +68,8 @@
 ;
 
 (deftest test-format-time-1
-    "Check the function clj-calandar.format-datetime/format-time-."
-    (testing "the function clj-calandar.format-datetime/format-time-."
+    "Check the function clj-calendar.format-datetime/format-time-."
+    (testing "the function clj-calendar.format-datetime/format-time-."
         (are [x y] (= x y)  
               "one minute ago"                (format-time- 1 0 "minute" "second")
               "one minute and one second ago" (format-time- 1 1 "minute" "second")
@@ -82,8 +82,8 @@
               "one month and 2 years ago"     (format-time- 1 2 "month" "year"))))
 
 (deftest test-format-time-2
-    "Check the function clj-calandar.format-datetime/format-time-."
-    (testing "the function clj-calandar.format-datetime/format-time-."
+    "Check the function clj-calendar.format-datetime/format-time-."
+    (testing "the function clj-calendar.format-datetime/format-time-."
         (are [x y] (= x y)  
               "2 minutes ago"                (format-time- 2 0 "minute" "second")
               "2 minutes and one second ago" (format-time- 2 1 "minute" "second")
@@ -96,8 +96,8 @@
               "2 months and 2 years ago"     (format-time- 2 2 "month" "year"))))
 
 (deftest test-format-time
-    "Check the function clj-calandar.format-datetime/format-time."
-    (testing "the function clj-calandar.format-datetime/format-time."
+    "Check the function clj-calendar.format-datetime/format-time."
+    (testing "the function clj-calendar.format-datetime/format-time."
         (are [x y] (= x y)  
               "1 month ago"  (format-time 1 "month")
               "2 months ago" (format-time 2 "months")
@@ -105,46 +105,68 @@
               "2 years ago"  (format-time 2 "years"))))
 
 (deftest test-format-month-1
-    "Check the function clj-calandar.format-datetime/format-month."
-    (testing "the function clj-calandar.format-datetime/format-month."
+    "Check the function clj-calendar.format-datetime/format-month."
+    (testing "the function clj-calendar.format-datetime/format-month."
         (are [x y] (= x y)  
               "one month ago"              (format-month 1 0))))
 
 (deftest test-format-month-2
-    "Check the function clj-calandar.format-datetime/format-month."
-    (testing "the function clj-calandar.format-datetime/format-month."
+    "Check the function clj-calendar.format-datetime/format-month."
+    (testing "the function clj-calendar.format-datetime/format-month."
         (are [x y] (= x y)  
               "one month and one day ago"  (format-month 1 1)
               "one month and 2 days ago"   (format-month 1 2)
               "one month and 100 days ago" (format-month 1 100))))
 
 (deftest test-format-month-3
-    "Check the function clj-calandar.format-datetime/format-month."
-    (testing "the function clj-calandar.format-datetime/format-month."
+    "Check the function clj-calendar.format-datetime/format-month."
+    (testing "the function clj-calendar.format-datetime/format-month."
         (are [x y] (= x y)  
               "2 months ago" (format-month 2 1)
               "2 months ago" (format-month 2 2)
               "2 months ago" (format-month 2 100))))
 
 (deftest test-format-day-1
-    "Check the function clj-calandar.format-datetime/format-day."
-    (testing "the function clj-calandar.format-datetime/format-day."
+    "Check the function clj-calendar.format-datetime/format-day."
+    (testing "the function clj-calendar.format-datetime/format-day."
         (are [x y] (= x y)  
               "one day ago"              (format-day 1 0))))
 
 (deftest test-format-day-2
-    "Check the function clj-calandar.format-datetime/format-day."
-    (testing "the function clj-calandar.format-datetime/format-day."
+    "Check the function clj-calendar.format-datetime/format-day."
+    (testing "the function clj-calendar.format-datetime/format-day."
         (are [x y] (= x y)  
               "one day and one hour ago"  (format-day 1 1)
               "one day and 2 hours ago"   (format-day 1 2)
               "one day and 100 hours ago" (format-day 1 100))))
 
 (deftest test-format-day-3
-    "Check the function clj-calandar.format-datetime/format-day."
-    (testing "the function clj-calandar.format-datetime/format-day."
+    "Check the function clj-calendar.format-datetime/format-day."
+    (testing "the function clj-calendar.format-datetime/format-day."
         (are [x y] (= x y)  
               "2 days and one hour ago"  (format-day 2 1)
               "2 days and 2 hours ago"   (format-day 2 2)
               "2 days and 100 hours ago" (format-day 2 100))))
+
+(deftest test-format-hours-1
+    "Check the function clj-calendar.format-datetime/format-hours."
+    (testing "the function clj-calendar.format-datetime/format-hours."
+        (are [x y] (= x y)  
+              "one hour ago"              (format-hours 1 0))))
+
+(deftest test-format-hours-2
+    "Check the function clj-calendar.format-datetime/format-hours."
+    (testing "the function clj-calendar.format-datetime/format-hours."
+        (are [x y] (= x y)  
+              "one hour and one minute ago"  (format-hours 1 1)
+              "one hour and 2 minutes ago"   (format-hours 1 2)
+              "one hour and 100 minutes ago" (format-hours 1 100))))
+
+(deftest test-format-hours-3
+    "Check the function clj-calendar.format-datetime/format-hours."
+    (testing "the function clj-calendar.format-datetime/format-hours."
+        (are [x y] (= x y)  
+              "2 hours and one minute ago"   (format-hours 2 1)
+              "2 hours and 2 minutes ago"    (format-hours 2 2)
+              "2 hours and 100 minutes ago"  (format-hours 2 100))))
 
