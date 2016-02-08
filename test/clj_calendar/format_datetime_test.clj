@@ -192,3 +192,10 @@
               "2 minutes and 2 seconds ago"    (format-minutes 2 2)
               "2 minutes and 100 seconds ago"  (format-minutes 2 100))))
 
+(deftest test-format-seconds-1
+    "Check the function clj-calendar.format-datetime/format-seconds."
+    (testing "the function clj-calendar.format-datetime/format-seconds."
+        (are [x y] (= x y)  
+              "one second ago"                 (format-seconds 1)
+              "2 seconds ago"                  (format-seconds 2))))
+
