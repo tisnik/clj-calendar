@@ -104,3 +104,25 @@
               "1 year ago"   (format-time 1 "year")
               "2 years ago"  (format-time 2 "years"))))
 
+(deftest test-format-month-1
+    "Check the function clj-calandar.format-datetime/format-month."
+    (testing "the function clj-calandar.format-datetime/format-month."
+        (are [x y] (= x y)  
+              "one month ago"              (format-month 1 0))))
+
+(deftest test-format-month-2
+    "Check the function clj-calandar.format-datetime/format-month."
+    (testing "the function clj-calandar.format-datetime/format-month."
+        (are [x y] (= x y)  
+              "one month and one day ago"  (format-month 1 1)
+              "one month and 2 days ago"   (format-month 1 2)
+              "one month and 100 days ago" (format-month 1 100))))
+
+(deftest test-format-month-3
+    "Check the function clj-calandar.format-datetime/format-month."
+    (testing "the function clj-calandar.format-datetime/format-month."
+        (are [x y] (= x y)  
+              "2 months ago" (format-month 2 1)
+              "2 months ago" (format-month 2 2)
+              "2 months ago" (format-month 2 100))))
+
