@@ -132,6 +132,14 @@
               "100 months ago" (format-month 100 2)
               "100 months ago" (format-month 100 100))))
 
+(deftest test-format-month-special-cases
+    "Check the function clj-calendar.format-datetime/format-month."
+    (testing "the function clj-calendar.format-datetime/format-month."
+        (are [x y] (= x y)  
+              "one day ago"    (format-month 0 1)
+              "2 days ago"     (format-month 0 2)
+              "100 days ago"   (format-month 0 100))))
+
 (deftest test-format-day-1
     "Check the function clj-calendar.format-datetime/format-day."
     (testing "the function clj-calendar.format-datetime/format-day."
