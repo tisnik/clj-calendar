@@ -37,16 +37,6 @@
             :else           (format "%d %ss and %d %ss ago" amount1 unit1 amount2 unit2))))
 
 
-(defn format-month
-    "Format month into human readable format."
-    [months days]
-    (if (> months 1)
-        (format "%d months ago" months)
-        (cond
-            (zero? days) "one month ago"
-            (>  days 1)  (format "one month and %d days ago" days)
-            :else        (format "one month and one day ago"))))
-
 (defn format-day
     "Format days/hours in case the given build is younger than one month."
     [days hours]
@@ -68,4 +58,18 @@
     (if (one? seconds)
         (format "one second ago")
         (format "%d seconds ago" seconds)))
+
+(defn format-one-month
+    "Format month into human readable format."
+    [days]
+    (cond (zero? days) "one month ago"
+          (>  days 1)  (format "one month and %d days ago" days)
+          :else        (format "one month and one day ago")))
+
+(defn format-month
+    "Format month into human readable format."
+    [months days]
+    (cond (zero? months) (format-day days 0)
+          (> months 1)   (format "%d months ago" months)
+          :else          (format-one-month days)))
 
