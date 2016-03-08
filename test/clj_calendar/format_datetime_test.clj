@@ -124,7 +124,13 @@
         (are [x y] (= x y)  
               "2 months ago" (format-month 2 1)
               "2 months ago" (format-month 2 2)
-              "2 months ago" (format-month 2 100))))
+              "2 months ago" (format-month 2 100)
+              "4 months ago" (format-month 4 1)
+              "4 months ago" (format-month 4 2)
+              "4 months ago" (format-month 4 100)
+              "100 months ago" (format-month 100 1)
+              "100 months ago" (format-month 100 2)
+              "100 months ago" (format-month 100 100))))
 
 (deftest test-format-day-1
     "Check the function clj-calendar.format-datetime/format-day."
@@ -146,7 +152,13 @@
         (are [x y] (= x y)  
               "2 days and one hour ago"  (format-day 2 1)
               "2 days and 2 hours ago"   (format-day 2 2)
-              "2 days and 100 hours ago" (format-day 2 100))))
+              "2 days and 100 hours ago" (format-day 2 100)
+              "4 days and one hour ago"  (format-day 4 1)
+              "4 days and 2 hours ago"   (format-day 4 2)
+              "4 days and 100 hours ago" (format-day 4 100)
+              "100 days and one hour ago"  (format-day 100 1)
+              "100 days and 2 hours ago"   (format-day 100 2)
+              "100 days and 100 hours ago" (format-day 100 100))))
 
 (deftest test-format-hours-1
     "Check the function clj-calendar.format-datetime/format-hours."
