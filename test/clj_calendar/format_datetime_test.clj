@@ -180,7 +180,13 @@
         (are [x y] (= x y)  
               "2 hours and one minute ago"   (format-hours 2 1)
               "2 hours and 2 minutes ago"    (format-hours 2 2)
-              "2 hours and 100 minutes ago"  (format-hours 2 100))))
+              "2 hours and 100 minutes ago"  (format-hours 2 100)
+              "4 hours and one minute ago"   (format-hours 4 1)
+              "4 hours and 2 minutes ago"    (format-hours 4 2)
+              "4 hours and 100 minutes ago"  (format-hours 4 100)
+              "100 hours and one minute ago"   (format-hours 100 1)
+              "100 hours and 2 minutes ago"    (format-hours 100 2)
+              "100 hours and 100 minutes ago"  (format-hours 100 100))))
 
 (deftest test-format-minutes-1
     "Check the function clj-calendar.format-datetime/format-minutes."
@@ -202,7 +208,13 @@
         (are [x y] (= x y)  
               "2 minutes and one second ago"   (format-minutes 2 1)
               "2 minutes and 2 seconds ago"    (format-minutes 2 2)
-              "2 minutes and 100 seconds ago"  (format-minutes 2 100))))
+              "2 minutes and 100 seconds ago"  (format-minutes 2 100)
+              "4 minutes and one second ago"   (format-minutes 4 1)
+              "4 minutes and 2 seconds ago"    (format-minutes 4 2)
+              "4 minutes and 100 seconds ago"  (format-minutes 4 100)
+              "100 minutes and one second ago"   (format-minutes 100 1)
+              "100 minutes and 2 seconds ago"    (format-minutes 100 2)
+              "100 minutes and 100 seconds ago"  (format-minutes 100 100))))
 
 (deftest test-format-seconds-1
     "Check the function clj-calendar.format-datetime/format-seconds."
