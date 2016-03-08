@@ -34,8 +34,9 @@ https://github.com/tisnik/clj-calendar
 ## Usage
 
 There are two set of functions divided into two namespaces:
-    * clj-calendar/calendar
-    * clj-calendar/format-datetime
+
+- clj-calendar/calendar
+- clj-calendar/format-datetime
 
 ### Usage of clj-calendar/calendar
 
