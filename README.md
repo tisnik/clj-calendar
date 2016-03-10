@@ -42,6 +42,24 @@ There are two set of functions divided into two namespaces:
 
 ### Usage of clj-calendar/format-datetime
 
+### API Documentation
+
+## Leiningen targets
+
+The following Leiningen targets are supported by the current version of this module:
+
+### Run unit tests
+
+    lein test
+
+### Measure code coverage
+
+    lein cloverage
+
+### Generate or regenerate documentation
+
+    lein doc
+
 ## License
 
 Copyright © 2015, 2016 Pavel Tisnovsky
