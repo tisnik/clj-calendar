@@ -111,3 +111,9 @@
              " - "
              (get-last-day-of-week-formatted cal))))
 
+(defn minute-of-day
+    []
+    (let [calendar (get-calendar)]
+        (+ (* 60 (.get calendar java.util.Calendar/HOUR_OF_DAY))
+           (.get calendar java.util.Calendar/MINUTE))))
+
