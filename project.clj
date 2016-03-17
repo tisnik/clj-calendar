@@ -10,7 +10,7 @@
 ;      Pavel Tisnovsky
 ;
 
-(defproject org.clojars.tisnik/clj-calendar "0.1.0-SNAPSHOT"
+(defproject org.clojars.tisnik/clj-calendar "0.2.0-SNAPSHOT"
     :description "Set of functions for manipulating with Calendar(s)"
     :url "http://example.com/FIXME"
     :license {:name "Eclipse Public License"
