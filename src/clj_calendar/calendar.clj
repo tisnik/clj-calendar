@@ -85,8 +85,8 @@
 
 (defn format-time
     "Format given date using the following date/time format: 'HH:mm:ss'"
-    [caleldar]
-    (format-date-using-desired-format cal "HH:mm:ss"))
+    [calendar]
+    (format-date-using-desired-format calendar "HH:mm:ss"))
 
 (defn format-date-time
     "Format given date using the following date/time format: 'yyyy-MM-dd HH:mm:ss'"
