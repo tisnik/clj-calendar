@@ -32,6 +32,16 @@
     [calendar]
     (.get calendar java.util.Calendar/YEAR))
 
+(defn get-month
+    "Returns the month of the current year."
+    [calendar]
+    (inc (.get calendar java.util.Calendar/MONTH)))
+
+(defn get-day
+    "Returns the day of the current month"
+    [calendar]
+    (.get calendar java.util.Calendar/DAY_OF_MONTH))
+
 (defn get-week
     "Returns week number within the current year."
     [calendar]
