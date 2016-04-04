@@ -234,3 +234,11 @@
                 (.set calendar year 00 01 00 00 00)
                 (is (= year (get-year calendar)))))))
 
+(deftest test-get-month
+    "Check the function clj-calendar.calendar/get-month"
+    (testing "the function clj-calendar.calendar/get-month"
+        (let [calendar (get-calendar)]
+            (doseq [month (range 1 13)]
+                (.set calendar 2000 month 00 00 00)
+                (is (= month (get-month calendar)))))))
+
