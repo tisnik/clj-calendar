@@ -242,3 +242,19 @@
                 (.set calendar 2000 month 00 00 00)
                 (is (= month (get-month calendar)))))))
 
+(deftest test-get-day-1
+    "Check the function clj-calendar.calendar/get-month"
+    (testing "the function clj-calendar.calendar/get-month"
+        (let [calendar (get-calendar)]
+            (doseq [day (range 1 31)]
+                (.set calendar 2000 00 day 00 00)
+                (is (= day (get-day calendar)))))))
+
+(deftest test-get-day-2
+    "Check the function clj-calendar.calendar/get-month"
+    (testing "the function clj-calendar.calendar/get-month"
+        (let [calendar (get-calendar)]
+            (doseq [day (range 1 29)]
+                (.set calendar 2000 01 day 00 00)
+                (is (= day (get-day calendar)))))))
+
