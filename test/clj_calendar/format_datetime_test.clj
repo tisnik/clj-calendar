@@ -125,6 +125,32 @@
               "2 months and one year ago"     (format-time- 2 1 "month" "year")
               "2 months and 2 years ago"      (format-time- 2 2 "month" "year"))))
 
+(deftest test-format-time-3
+    "Check the function clj-calendar.format-datetime/format-time-."
+    (testing "the function clj-calendar.format-datetime/format-time-."
+        (are [x y] (= x y)  
+              "99 minutes ago"                 (format-time- 99 0 "minute" "second")
+              "99 minutes and one second ago"  (format-time- 99 1 "minute" "second")
+              "99 minutes and 2 seconds ago"   (format-time- 99 2 "minute" "second")
+              "99 minutes and 3 seconds ago"   (format-time- 99 3 "minute" "second")
+              "99 minutes and 4 seconds ago"   (format-time- 99 4 "minute" "second")
+              "99 minutes and 59 seconds ago"  (format-time- 99 59 "minute" "second")
+              "99 minutes and 60 seconds ago"  (format-time- 99 60 "minute" "second")
+              "99 minutes and 61 seconds ago"  (format-time- 99 61 "minute" "second")
+              "99 minutes and 99 seconds ago"  (format-time- 99 99 "minute" "second")
+              "99 days ago"                    (format-time- 99 0 "day" "hour")
+              "99 days and one hour ago"       (format-time- 99 1 "day" "hour")
+              "99 days and 2 hours ago"        (format-time- 99 2 "day" "hour")
+              "99 days and 3 hours ago"        (format-time- 99 3 "day" "hour")
+              "99 days and 4 hours ago"        (format-time- 99 4 "day" "hour")
+              "99 days and 59 hours ago"       (format-time- 99 59 "day" "hour")
+              "99 days and 60 hours ago"       (format-time- 99 60 "day" "hour")
+              "99 days and 61 hours ago"       (format-time- 99 61 "day" "hour")
+              "99 days and 99 hours ago"       (format-time- 99 99 "day" "hour")
+              "99 months ago"                  (format-time- 99 0 "month" "year")
+              "99 months and one year ago"     (format-time- 99 1 "month" "year")
+              "99 months and 2 years ago"      (format-time- 99 2 "month" "year"))))
+
 (deftest test-format-time
     "Check the function clj-calendar.format-datetime/format-time."
     (testing "the function clj-calendar.format-datetime/format-time."
