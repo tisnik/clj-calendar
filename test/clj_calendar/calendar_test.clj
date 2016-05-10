@@ -275,10 +275,21 @@
                 (.set calendar java.util.Calendar/WEEK_OF_YEAR week)
                 (is (= week (get-week calendar)))))))
 
+(deftest test-get-day-of-week
+    "Check the function clj-calendar.calendar/get-day-of-week"
+    (testing "the function clj-calendar.calendar/get-day-of-week"
+        (let [calendar (get-calendar)]
+            (doseq [day (range 1 365)]
+                ; don't change the year, it's preciselly selected :)
+                (.set calendar java.util.Calendar/YEAR 2001)
+                (.set calendar java.util.Calendar/DAY_OF_YEAR day)
+                (is (= (inc (mod day 7)) (get-day-of-week calendar)))))))
+
 (deftest test-get-calendar-for-week
     "Check the function clj-calendar.calendar/get-calendar-for-week"
     (testing "the function clj-calendar.calendar/get-calendar-for-week"
-        (let [calendar (get-calendar-for-week 2000 2)] ; first week might be set for the previous year
+        ; first week might be set for the previous year
+        (let [calendar (get-calendar-for-week 2000 2)]
             (are [x y] (= x y)
                 2000 (get-year calendar)
                 1    (get-month calendar)
