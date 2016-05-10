@@ -258,3 +258,12 @@
                 (.set calendar 2000 01 day 00 00)
                 (is (= day (get-day calendar)))))))
 
+(deftest test-get-calendar-for-week
+    "Check the function clj-calendar.calendar/get-calendar-for-week"
+    (testing "the function clj-calendar.calendar/get-calendar-for-week"
+        (let [calendar (get-calendar-for-week 2000 2)] ; first week might be set for the previous year
+            (are [x y] (= x y)
+                2000 (get-year calendar)
+                1    (get-month calendar)
+                2    (get-week calendar)))))
+
