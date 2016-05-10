@@ -266,6 +266,15 @@
                 (.set calendar java.util.Calendar/WEEK_OF_YEAR week)
                 (is (= week (get-week calendar)))))))
 
+(deftest test-get-week-2
+    "Check the function clj-calendar.calendar/get-week"
+    (testing "the function clj-calendar.calendar/get-week"
+        (let [calendar (get-calendar)]
+            (doseq [week (range 1 52)]
+                (.set calendar java.util.Calendar/YEAR 2000)
+                (.set calendar java.util.Calendar/WEEK_OF_YEAR week)
+                (is (= week (get-week calendar)))))))
+
 (deftest test-get-calendar-for-week
     "Check the function clj-calendar.calendar/get-calendar-for-week"
     (testing "the function clj-calendar.calendar/get-calendar-for-week"
