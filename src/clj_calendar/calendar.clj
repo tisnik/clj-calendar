@@ -13,6 +13,12 @@
 (ns clj-calendar.calendar
     "Namespace that contains various functions for handling calendar and dates.")
 
+(def unified-date-format
+    (new java.text.SimpleDateFormat "yyyy-MM-dd"))
+
+(def unified-date-time-format
+    (new java.text.SimpleDateFormat "yyyy-MM-dd HH:mm:ss"))
+
 (defn get-calendar
     "Gets an instance of calendar using the default time zone and default locale."
     []
@@ -116,4 +122,8 @@
     (let [calendar (get-calendar)]
         (+ (* 60 (.get calendar java.util.Calendar/HOUR_OF_DAY))
            (.get calendar java.util.Calendar/MINUTE))))
+
+(defn format-current-date
+    []
+    (format-date (new java.util.Date)))
 
