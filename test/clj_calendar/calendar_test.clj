@@ -330,3 +330,20 @@
                 "2000-01-09" (get-first-day-of-week calendar2)
                 "2000-01-16" (get-first-day-of-week calendar3)))))
 
+(deftest test-get-last-day-of-week
+    "Check the function clj-calendar.calendar/calculate-last-day-of-week"
+    (testing "the function clj-calendar.calendar/calculate-last-day-of-week"
+        (let [calendar1 (get-calendar)
+              calendar2 (get-calendar)
+              calendar3 (get-calendar)]
+            (.set calendar1 java.util.Calendar/YEAR 2000)
+            (.set calendar1 java.util.Calendar/WEEK_OF_YEAR 2)
+            (.set calendar2 java.util.Calendar/YEAR 2000)
+            (.set calendar2 java.util.Calendar/WEEK_OF_YEAR 3)
+            (.set calendar3 java.util.Calendar/YEAR 2000)
+            (.set calendar3 java.util.Calendar/WEEK_OF_YEAR 4)
+            (are [x y] (= x (format-date y))
+                "2000-01-08" (get-last-day-of-week calendar1)
+                "2000-01-15" (get-last-day-of-week calendar2)
+                "2000-01-22" (get-last-day-of-week calendar3)))))
+
