@@ -303,3 +303,13 @@
                 ; must be zero, because we get 1st day of each week
                 (is (zero? (calculate-first-day-of-week (get-calendar-for-week year week))))))))
 
+(deftest test-calculate-first-day-of-week-2
+    "Check the function clj-calendar.calendar/calculate-first-day-of-week"
+    (testing "the function clj-calendar.calendar/calculate-first-day-of-week"
+        (let [calendar (get-calendar)]
+            (doseq [day (range 1 365)]
+                ; don't change the year!
+                (.set calendar java.util.Calendar/YEAR 2001)
+                (.set calendar java.util.Calendar/DAY_OF_YEAR day)
+                (is (= (- 0 (mod day 7)) (calculate-first-day-of-week calendar)))))))
+
