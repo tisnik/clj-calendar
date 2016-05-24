@@ -347,3 +347,24 @@
                 "2000-01-15" (get-last-day-of-week calendar2)
                 "2000-01-22" (get-last-day-of-week calendar3)))))
 
+(deftest test-format-time-1
+    "Check the function clj-calendar.calendar/format-time"
+    (testing "the function clj-calendar.calendar/format-time"
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 01 01 10 20 30)
+            (is (= "10:20:30" (format-time calendar))))))
+
+(deftest test-format-time-2
+    "Check the function clj-calendar.calendar/format-time"
+    (testing "the function clj-calendar.calendar/format-time"
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 01 01 10 20 60)
+            (is (= "10:21:00" (format-time calendar))))))
+
+(deftest test-format-time-3
+    "Check the function clj-calendar.calendar/format-time"
+    (testing "the function clj-calendar.calendar/format-time"
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 01 01 10 60 60)
+            (is (= "11:01:00" (format-time calendar))))))
+
