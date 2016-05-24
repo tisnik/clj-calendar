@@ -295,3 +295,11 @@
                 1    (get-month calendar)
                 2    (get-week calendar)))))
 
+(deftest test-calculate-first-day-of-week-1
+    "Check the function clj-calendar.calendar/calculate-first-day-of-week"
+    (testing "the function clj-calendar.calendar/calculate-first-day-of-week"
+        (doseq [year (range 2000 2010)]
+            (doseq [week (range 1 52)]
+                ; must be zero, because we get 1st day of each week
+                (is (zero? (calculate-first-day-of-week (get-calendar-for-week year week))))))))
+
