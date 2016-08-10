@@ -602,3 +602,30 @@
             (.set calendar 2000 11 11 00 00 00)
             (is (= "2000-12-16" (get-last-day-of-week-formatted calendar))))))
 
+(deftest test-format-from-to-date-for-week-1
+    "Check the function clj-calendar.calendar/format-from-to-date-for-week"
+    (testing "the function clj-calendar.calendar/format-from-to-date-for-week"
+        (is (= "1999-12-19 - 1999-12-25" (format-from-to-date-for-week 2000 0)))
+        (is (= "1999-12-26 - 2000-01-01" (format-from-to-date-for-week 2000 1)))))
+
+(deftest test-format-from-to-date-for-week-2
+    "Check the function clj-calendar.calendar/format-from-to-date-for-week"
+    (testing "the function clj-calendar.calendar/format-from-to-date-for-week"
+        (is (= "2000-01-02 - 2000-01-08" (format-from-to-date-for-week 2000 2)))
+        (is (= "2000-01-09 - 2000-01-15" (format-from-to-date-for-week 2000 3)))
+        (is (= "2000-01-16 - 2000-01-22" (format-from-to-date-for-week 2000 4)))
+        (is (= "2000-01-23 - 2000-01-29" (format-from-to-date-for-week 2000 5)))
+        (is (= "2000-01-30 - 2000-02-05" (format-from-to-date-for-week 2000 6)))
+        (is (= "2000-02-06 - 2000-02-12" (format-from-to-date-for-week 2000 7)))
+        (is (= "2000-02-13 - 2000-02-19" (format-from-to-date-for-week 2000 8)))
+        (is (= "2000-02-20 - 2000-02-26" (format-from-to-date-for-week 2000 9)))
+        (is (= "2000-02-27 - 2000-03-04" (format-from-to-date-for-week 2000 10)))))
+
+(deftest test-format-from-to-date-for-week-3
+    "Check the function clj-calendar.calendar/format-from-to-date-for-week"
+    (testing "the function clj-calendar.calendar/format-from-to-date-for-week"
+        (is (= "2000-12-03 - 2000-12-09" (format-from-to-date-for-week 2000 50)))
+        (is (= "2000-12-10 - 2000-12-16" (format-from-to-date-for-week 2000 51)))
+        (is (= "2000-12-17 - 2000-12-23" (format-from-to-date-for-week 2000 52)))
+        (is (= "2000-12-24 - 2000-12-30" (format-from-to-date-for-week 2000 53)))))
+
