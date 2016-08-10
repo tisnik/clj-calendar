@@ -485,3 +485,37 @@
             (.set calendar 2000 11 11 00 00 00)
             (is (= "2000-12-10" (get-first-day-of-week-formatted calendar))))))
 
+(deftest test-get-last-day-of-week-1
+    "Check the function clj-calendar.calendar/get-last-day-of-week"
+    (testing "the function clj-calendar.calendar/get-last-day-of-week"
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 00 1 00 00 00)
+            (is (= "2000-01-01" (get-last-day-of-week-formatted calendar))))
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 00 2 00 00 00)
+            (is (= "2000-01-08" (get-last-day-of-week-formatted calendar))))
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 00 3 00 00 00)
+            (is (= "2000-01-08" (get-last-day-of-week-formatted calendar))))
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 00 4 00 00 00)
+            (is (= "2000-01-08" (get-last-day-of-week-formatted calendar))))
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 00 5 00 00 00)
+            (is (= "2000-01-08" (get-last-day-of-week-formatted calendar))))
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 00 6 00 00 00)
+            (is (= "2000-01-08" (get-last-day-of-week-formatted calendar))))
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 00 7 00 00 00)
+            (is (= "2000-01-08" (get-last-day-of-week-formatted calendar))))
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 00 8 00 00 00)
+            (is (= "2000-01-08" (get-last-day-of-week-formatted calendar))))
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 00 9 00 00 00)
+            (is (= "2000-01-15" (get-last-day-of-week-formatted calendar))))
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 00 10 00 00 00)
+            (is (= "2000-01-15" (get-last-day-of-week-formatted calendar))))))
+
