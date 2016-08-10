@@ -448,3 +448,40 @@
             (.set calendar 2000 01 14 00 00 00)
             (is (= "2000-02-13" (get-first-day-of-week-formatted calendar))))))
 
+(deftest test-get-first-day-of-week-3
+    "Check the function clj-calendar.calendar/get-first-day-of-week"
+    (testing "the function clj-calendar.calendar/get-first-day-of-week"
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 11 1 00 00 00)
+            (is (= "2000-11-26" (get-first-day-of-week-formatted calendar))))
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 11 2 00 00 00)
+            (is (= "2000-11-26" (get-first-day-of-week-formatted calendar))))
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 11 3 00 00 00)
+            (is (= "2000-12-03" (get-first-day-of-week-formatted calendar))))
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 11 4 00 00 00)
+            (is (= "2000-12-03" (get-first-day-of-week-formatted calendar))))
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 11 5 00 00 00)
+            (is (= "2000-12-03" (get-first-day-of-week-formatted calendar))))
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 11 6 00 00 00)
+            (is (= "2000-12-03" (get-first-day-of-week-formatted calendar))))
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 11 7 00 00 00)
+            (is (= "2000-12-03" (get-first-day-of-week-formatted calendar))))
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 11 8 00 00 00)
+            (is (= "2000-12-03" (get-first-day-of-week-formatted calendar))))
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 11 9 00 00 00)
+            (is (= "2000-12-03" (get-first-day-of-week-formatted calendar))))
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 11 10 00 00 00)
+            (is (= "2000-12-10" (get-first-day-of-week-formatted calendar))))
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 11 11 00 00 00)
+            (is (= "2000-12-10" (get-first-day-of-week-formatted calendar))))))
+
