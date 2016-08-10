@@ -629,3 +629,12 @@
         (is (= "2000-12-17 - 2000-12-23" (format-from-to-date-for-week 2000 52)))
         (is (= "2000-12-24 - 2000-12-30" (format-from-to-date-for-week 2000 53)))))
 
+(defn between?
+    [value min max]
+    (and (>= value min) (<= value max)))
+
+(deftest test-minute-of-day
+    "Check the function clj-calendar.calendar/minute-of-day"
+    (testing "the function clj-calendar.calendar/minute-of-day"
+        (is (between? (minute-of-day) 0 (* 24 60)))))
+
