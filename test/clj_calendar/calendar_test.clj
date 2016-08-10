@@ -638,3 +638,8 @@
     (testing "the function clj-calendar.calendar/minute-of-day"
         (is (between? (minute-of-day) 0 (* 24 60)))))
 
+(deftest test-format-current-date
+    "Check the function clj-calendar.calendar/format-current-date"
+    (testing "the function clj-calendar.calendar/format-current-date"
+        (is (re-matches #"[0-9]{4}-[0-9]{2}-[0-9]{2}" (format-current-date)))))
+
