@@ -16,7 +16,7 @@ integrate *clj-calendar* into your project.
 
 If you don't want to use *Leiningen*, you can manually download project snapshot
 from
-[https://clojars.org/clj-calendar/versions/0.3.0-SNAPSHOT](https://clojars.org/clj-calendar/versions/0.3.0-SNAPSHOT)
+[https://clojars.org/org.clojars.tisnik/clj-calendar/versions/0.3.0-SNAPSHOT](https://clojars.org/org.clojars.tisnik/clj-calendar/versions/0.3.0-SNAPSHOT)
 and integrate the source file into your project. Or simply clone the following
 GIT repository:
 [https://github.com/tisnik/clj-calendar](https://github.com/tisnik/clj-calendar)
