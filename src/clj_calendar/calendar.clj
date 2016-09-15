@@ -14,9 +14,11 @@
     "Namespace that contains various functions for handling calendar and dates.")
 
 (def unified-date-format
+    "String template used to format datetime as a date (only)."
     (new java.text.SimpleDateFormat "yyyy-MM-dd"))
 
 (def unified-date-time-format
+    "String template used to format datetime as a date followed by time."
     (new java.text.SimpleDateFormat "yyyy-MM-dd HH:mm:ss"))
 
 (defn get-calendar
@@ -118,12 +120,14 @@
              (get-last-day-of-week-formatted cal))))
 
 (defn minute-of-day
+    "Returns the (index of) minute of current day."
     []
     (let [calendar (get-calendar)]
         (+ (* 60 (.get calendar java.util.Calendar/HOUR_OF_DAY))
            (.get calendar java.util.Calendar/MINUTE))))
 
 (defn format-current-date
+    "Format current date using the following template: yyyy-MM-dd"
     []
     (format-date (new java.util.Date)))
 
