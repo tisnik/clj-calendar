@@ -49,7 +49,88 @@ As mentioned above there are two set of functions divided into two namespaces
 
 ### Usage of clj-calendar/calendar
 
+    (use '[clj-calendar.calendar])
+    nil
+
+    (get-calendar)
+    #inst "2016-09-15T20:59:36.773+02:00"
+
+    (get-calendar-for-week 2016 1)
+    #inst "2015-12-27T00:00:00.000+01:00"
+
+    (get-year (get-calendar))
+    2016
+
+    (def c (get-calendar))
+
+    (get-year c)
+    2016
+
+    (get-month c)
+    9
+
+    (get-day c)
+    15
+
+    (get-week c)
+    38
+
+    (get-day-of-week c)
+    5
+
+    (calculate-first-day-of-week c)
+    -4
+
+    (get-first-day-of-week c)
+    #inst "2016-09-11T21:00:18.781+02:00"
+
+    (get-last-day-of-week c)
+    #inst "2016-09-17T21:00:18.781+02:00"
+
+    (format-current-date)
+    "2016-09-15"
+
+
 ### Usage of clj-calendar/format-datetime
+
+    (format-time- 1 2  "minute" "second")
+    "one minute and 2 seconds ago"
+
+    (format-time- 1 4  "day" "hour")
+    "one day and 4 hours ago"
+
+    (format-time 1 "month")
+    "1 month ago"
+
+    (format-time 2 "months")
+    "2 months ago"
+
+    (format-time 1 "year")
+    "1 year ago"
+
+    (format-time 2 "years"))))
+    "2 years ago"
+
+    (format-month 1 1)
+    "one month and one day ago"
+
+    (format-month 1 2)
+    "one month and 2 days ago"
+
+    (format-month 0 1)
+    "one day ago"
+
+    (format-day 1 1)
+    "one day and one hour ago"
+
+    (format-day 1 2)
+    "one day and 2 hours ago"
+
+    (format-day 2 1)
+    "2 days and one hour ago"
+
+    (format-day 2 2)
+    "2 days and 2 hours ago"
 
 ### API Documentation
 
