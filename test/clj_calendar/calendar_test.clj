@@ -114,11 +114,14 @@
         (is (or
             (=  (type  (get-calendar)) java.util.Calendar)
             (=  (type  (get-calendar)) java.util.GregorianCalendar)))
-        (is (>  (.get (get-calendar) (java.util.Calendar/YEAR)) 2000))
-        (is (>= (.get (get-calendar) (java.util.Calendar/MONTH)) 0))
-        (is (<  (.get (get-calendar) (java.util.Calendar/MONTH)) 12))
+        (is (== (.get (get-calendar) (java.util.Calendar/ERA)) java.util.GregorianCalendar/AD))
+        (is (>  (.get (get-calendar) (java.util.Calendar/YEAR)) 2000))       ; must be valid in all cases
+        (is (>= (.get (get-calendar) (java.util.Calendar/MONTH)) 0))         ; must be valid in all cases
+        (is (<  (.get (get-calendar) (java.util.Calendar/MONTH)) 12))        ; must be valid in all cases
         (is (>= (.get (get-calendar) (java.util.Calendar/DAY_OF_MONTH)) 0))
         (is (<= (.get (get-calendar) (java.util.Calendar/DAY_OF_MONTH)) 31)) ; let's be on the safe side
+        (is (>= (.get (get-calendar) (java.util.Calendar/DAY_OF_WEEK_IN_MONTH)) 0))
+        (is (<= (.get (get-calendar) (java.util.Calendar/DAY_OF_WEEK_IN_MONTH)) 4))
         (is (>= (.get (get-calendar) (java.util.Calendar/DAY_OF_YEAR)) 0))
         (is (<= (.get (get-calendar) (java.util.Calendar/DAY_OF_YEAR)) 366)) ; let's be on the safe side
         (is (>= (.get (get-calendar) (java.util.Calendar/WEEK_OF_YEAR)) 0))
