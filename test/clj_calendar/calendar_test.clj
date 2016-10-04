@@ -219,6 +219,20 @@
             (is (= "2000-02-01 10:20"  (format-date-using-desired-format calendar "yyyy-MM-dd hh:mm")))
             (is (= "2000-02-01 10:20:30"  (format-date-using-desired-format calendar "yyyy-MM-dd hh:mm:ss"))))))
 
+(deftest test-format-date-using-desired-format-4
+    "Check the function clj-calendar.calendar/format-date-using-desired-format"
+    (testing "the function clj-calendar.calendar/format-date-using-desired-format."
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 01 01 10 20 30)
+            (is (= "AM"           (format-date-using-desired-format calendar "a")))
+            (is (= "AM"           (format-date-using-desired-format calendar "aa")))
+            (is (= "AM 2 AD"      (format-date-using-desired-format calendar "aa u GG"))))
+        (let [calendar (get-calendar)]
+            (.set calendar 2000 01 01 20 20 30)
+            (is (= "PM"           (format-date-using-desired-format calendar "a")))
+            (is (= "PM"           (format-date-using-desired-format calendar "aa")))
+            (is (= "PM 2 AD"      (format-date-using-desired-format calendar "aa u GG"))))))
+
 (deftest test-format-date-time-1
     "Check the function clj-calendar.calendar/format-date-time"
     (testing "the function clj-calendar.calendar/format-date-time"
