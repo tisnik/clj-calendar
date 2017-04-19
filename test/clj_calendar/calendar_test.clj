@@ -289,6 +289,24 @@
             (is (= "4"    (format-date-using-desired-format calendar "u")))     ; day number
             (is (= "AD"   (format-date-using-desired-format calendar "GG")))))) ; era
 
+(deftest test-format-date-using-desired-format-6
+    "Check the function clj-calendar.calendar/format-date-using-desired-format"
+    (testing "the function clj-calendar.calendar/format-date-using-desired-format."
+        (let [calendar (get-calendar)]
+            (.set calendar 10000 01 01 10 20 30)
+            (is (= "10000" (format-date-using-desired-format calendar "yyyy")))
+            (is (= "00"   (format-date-using-desired-format calendar "yy")))
+            (is (= "02"   (format-date-using-desired-format calendar "MM")))
+            (is (= "01"   (format-date-using-desired-format calendar "dd")))
+            (is (= "032"  (format-date-using-desired-format calendar "DDD")))   ; day in year
+            (is (= "10"   (format-date-using-desired-format calendar "hh")))    ; hour 0..11
+            (is (= "10"   (format-date-using-desired-format calendar "HH")))    ; hour 0..23
+            (is (= "20"   (format-date-using-desired-format calendar "mm")))
+            (is (= "30"   (format-date-using-desired-format calendar "ss")))
+            (is (= "AM"   (format-date-using-desired-format calendar "aa")))    ; AM/PM
+            (is (= "2"    (format-date-using-desired-format calendar "u")))     ; day number
+            (is (= "AD"   (format-date-using-desired-format calendar "GG")))))) ; era
+
 (deftest test-format-date-time-1
     "Check the function clj-calendar.calendar/format-date-time"
     (testing "the function clj-calendar.calendar/format-date-time"
