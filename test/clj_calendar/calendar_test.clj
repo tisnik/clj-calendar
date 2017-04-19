@@ -342,6 +342,20 @@
             (.set calendar 2000 00 01 00 00 00)
             (is (= "2000-01-01 00:00:00" (format-date-time calendar))))))
 
+(deftest test-format-date-time-6
+    "Check the function clj-calendar.calendar/format-date-time"
+    (testing "the function clj-calendar.calendar/format-date-time"
+        (let [calendar (get-calendar)]
+            (.set calendar 1000 00 01 00 00 00)
+            (is (= "1000-01-01 00:00:00" (format-date-time calendar))))))
+
+(deftest test-format-date-time-7
+    "Check the function clj-calendar.calendar/format-date-time"
+    (testing "the function clj-calendar.calendar/format-date-time"
+        (let [calendar (get-calendar)]
+            (.set calendar 10000 00 01 00 00 00)
+            (is (= "10000-01-01 00:00:00" (format-date-time calendar))))))
+
 (deftest test-get-year
     "Check the function clj-calendar.calendar/get-year"
     (testing "the function clj-calendar.calendar/get-year"
