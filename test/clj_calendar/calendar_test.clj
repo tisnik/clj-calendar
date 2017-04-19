@@ -199,6 +199,25 @@
             (is (<=  (.get calendar (java.util.Calendar/MILLISECOND)) 1000)))
 ))
 
+(deftest test-get-calendar-8
+    "Check the function clj-calendar.calendar/get-calendar."
+    (testing "the function clj-calendar.calendar/get-calendar."
+        (let [calendar (get-calendar)]
+            (.set calendar 10000 01 01 10 20 30)
+            (is (=  (.get calendar (java.util.Calendar/HOUR)) 10))
+            (is (=  (.get calendar (java.util.Calendar/MINUTE)) 20))
+            (is (=  (.get calendar (java.util.Calendar/SECOND)) 30)))
+))
+
+(deftest test-get-calendar-9
+    "Check the function clj-calendar.calendar/get-calendar."
+    (testing "the function clj-calendar.calendar/get-calendar."
+        (let [calendar (get-calendar)]
+            (.set calendar 10000 01 01 10 20 30)
+            (is (>=  (.get calendar (java.util.Calendar/MILLISECOND)) 0))
+            (is (<=  (.get calendar (java.util.Calendar/MILLISECOND)) 1000)))
+))
+
 (deftest test-format-date-using-desired-format
     "Check the function clj-calendar.calendar/format-date-using-desired-format"
     (testing "the function clj-calendar.calendar/format-date-using-desired-format."
